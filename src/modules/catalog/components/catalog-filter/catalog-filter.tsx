@@ -4,6 +4,13 @@ import FilterAutocomplete from './autocomplete-filter';
 import CatalogFavoritesIcon from '../catalog-favorites-icon/catalog-favorites-icon';
 import { useCatalogoContext } from '../../hooks/catalog/catalog.hook';
 
+type colors =
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'info'
+  | 'success'
+  | 'warning';
 function CatalogFilter() {
   const catalog = useCatalogoContext();
 
@@ -59,7 +66,7 @@ function CatalogFilter() {
               }}
               label={option.label}
               onClick={() => handleSelectOption(option.label)}
-              color={option.color}
+              color={option.color as colors}
               size="small"
             />
           );
